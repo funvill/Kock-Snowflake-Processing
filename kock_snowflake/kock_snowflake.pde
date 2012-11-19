@@ -3,6 +3,8 @@
  * Modifed from: http://forum.processing.org/topic/kock-snowflake-position-in-center
  * Last update: 18 Nov, 2012 
  */ 
+
+import processing.pdf.*;
  
 int generations = 4;
 int sideLen0 = 729;
@@ -19,6 +21,8 @@ void setup()
   background(255);
   stroke(0);
   strokeWeight(10);  // Thicker
+  beginRecord(PDF, "output.pdf");
+  
   //noLoop();
 }
 
@@ -38,6 +42,7 @@ void draw()
     turtleGraphics(rules1.charAt(i));
   }
   println();
+  /*
   //inside flake
   popMatrix();
   String rules2 = generateState(initiator, gen, fRule2);
@@ -48,10 +53,14 @@ void draw()
     turtleGraphics(rules2.charAt(i));
   }
   println();
+  */
   //next generation
   gen++;
   sideLen = sideLen/3;
-  if (gen==generations) noLoop();
+  if (gen==generations) {
+    endRecord();
+    noLoop();
+  }
 }//draw()
 
 
