@@ -6,8 +6,8 @@
 
 import processing.pdf.*;
  
-int generations = 4;
-int sideLen0 = 729;
+int generations = 3;
+int sideLen0 = 689;
 int gen = 0;
 int sideLen = sideLen0;
 String initiator = "F--F--F";
@@ -17,7 +17,7 @@ float angle = PI/3;
 
 void setup() 
 {
-  size(740, 850);
+  size(700, 810);
   background(255);
   stroke(0);
   strokeWeight(10);  // Thicker
